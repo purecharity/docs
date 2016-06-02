@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Importing fundraisers - Pure Charity Developer Documenation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Importing fundraisers";
+    var mkdocs_page_input_path = "import_guide/importing_fundraisers.md";
+    var mkdocs_page_url = "/import_guide/importing_fundraisers/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Pure Charity Developer Documenation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../changelog/">Changelog</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Api</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/fundraiser_api/">Fundraiser api</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/overview/">Overview</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Import guide</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Importing fundraisers</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#importing-fundraisers">Importing Fundraisers</a></li>
+                
+                    <li><a class="toctree-l4" href="#fundraiser-import-definitions-instructions">Fundraiser Import Definitions &amp; Instructions</a></li>
+                
+                    <li><a class="toctree-l4" href="#name">Name*</a></li>
+                
+                    <li><a class="toctree-l4" href="#fund-id">Fund ID</a></li>
+                
+                    <li><a class="toctree-l4" href="#url">URL</a></li>
+                
+                    <li><a class="toctree-l4" href="#founder-reference-id">Founder Reference ID</a></li>
+                
+                    <li><a class="toctree-l4" href="#anonymous-funding">Anonymous Funding</a></li>
+                
+                    <li><a class="toctree-l4" href="#anonymous-recurring-funding">Anonymous Recurring Funding</a></li>
+                
+                    <li><a class="toctree-l4" href="#personal-id">Personal ID</a></li>
+                
+                    <li><a class="toctree-l4" href="#campaign-id">Campaign ID</a></li>
+                
+                    <li><a class="toctree-l4" href="#about">About*</a></li>
+                
+                    <li><a class="toctree-l4" href="#end-date">End date</a></li>
+                
+                    <li><a class="toctree-l4" href="#funding-goal">Funding Goal*</a></li>
+                
+                    <li><a class="toctree-l4" href="#recurring-funding-goal">Recurring Funding Goal</a></li>
+                
+                    <li><a class="toctree-l4" href="#location">Location</a></li>
+                
+                    <li><a class="toctree-l4" href="#location-private">Location Private</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/">Overview</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Wordpress plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../wordpress_plugins/">Home</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Pure Charity Developer Documenation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Import guide &raquo;</li>
+        
+      
+    
+    <li>Importing fundraisers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="importing-fundraisers">Importing Fundraisers</h3>
+<h5 id="fundraiser-import-definitions-instructions">Fundraiser Import Definitions &amp; Instructions</h5>
+<ul>
+<li>indicates a required field</li>
+</ul>
+<p>For bulk importing of fundraisers prior to importing monthly donations or launch prepare a csv with the following headers and values. A sample csv and template are provided as part of our import downloads.</p>
+<h5 id="name">Name*</h5>
+<p>This is the name as it appears on the fundraiser. Ex: “Water for Malawi”</p>
+<h5 id="fund-id">Fund ID</h5>
+<p>This is the preferred reference id used by your organization to track this fundraiser as it relates to monthly online donations or internal tracking. If you do not have a preferred reference id one will be generated.</p>
+<h5 id="url">URL</h5>
+<p>The URL is the vanity name given to the web address. This makes the fundraiser easy for donors to find. Ex: “water-malawi” would create the url http://purecharity.com/water-malawi. If no URL is provided one will be generated from the fundraiser name.</p>
+<h5 id="founder-reference-id">Founder Reference ID</h5>
+<p>If you want to add an existing Pure Charity user as a founder for any of the fundraiser their reference ID can be added here. If no ID is provided we will assign the organization or admins as the founder.</p>
+<h5 id="anonymous-funding">Anonymous Funding</h5>
+<p>This is a value of TRUE or FALSE. If you would like funding goals to be private add the value TRUE, if you would like funding goals to be public add the value FALSE.</p>
+<h5 id="anonymous-recurring-funding">Anonymous Recurring Funding</h5>
+<p>This is a value of TRUE or FALSE. If you would like monthly funding goals to be private add the value TRUE, if you would like monthly funding goals to be public add the value FALSE.</p>
+<h5 id="personal-id">Personal ID</h5>
+<p>The personal ID is an optional field provided to the organization for tracking purposes. This field will be displayed on the downloaded transactions csv.</p>
+<h5 id="campaign-id">Campaign ID</h5>
+<p>The personal ID is an optional field provided to the organization for tracking purposes. This field will be displayed on the downloaded transactions csv. Contact the development team with questions about campaign IDs that are used to filter displayed results in the WordPress plugins.</p>
+<h5 id="about">About*</h5>
+<p>This is a short description about the Fundraiser. Maximum length: 255 characters.</p>
+<h5 id="end-date">End date</h5>
+<p>End date for the fundraiser provided in the format mm/dd/yyyy. Ex: ’01/25/2014′ To set the fundraiser as an unlimited fundraiser you can enter the date ’12/31/2099′</p>
+<h5 id="funding-goal">Funding Goal*</h5>
+<p>The funding goal is an integer value and can be set to any amount with at least a 1 dollar minimum. A fundraiser can be set as unlimited by entering a value of 999999. Round the funding goal to the nearest dollar.</p>
+<h5 id="recurring-funding-goal">Recurring Funding Goal</h5>
+<p>The monthly funding goal is an integer value and can be set to any amount with at least a 1 dollar minimum. A fundraiser can be set as unlimited by entering a value of 999999. Round the monthly funding goal to the nearest dollar.</p>
+<h5 id="location">Location</h5>
+<p>The location is the city and state or province where the fundraiser will provide support. Ex: ‘Dallas, TX’</p>
+<h5 id="location-private">Location Private</h5>
+<p>The location private value is a boolean and accepts a TRUE or FALSE setting. To keep the location of the fundraiser private set the value to TRUE. To keep the location of the fundraiser public set the value to FALSE. If no value is entered the default will be FALSE.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../api/overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../api/overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -4,9 +4,59 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-05-23</lastmod>
+     <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>None/changelog/</loc>
+     <lastmod>2016-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/api/fundraiser_api/</loc>
+     <lastmod>2016-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/api/overview/</loc>
+     <lastmod>2016-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/import_guide/importing_fundraisers/</loc>
+     <lastmod>2016-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/import_guide/overview/</loc>
+     <lastmod>2016-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/wordpress_plugins/</loc>
+     <lastmod>2016-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
