@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Fundraiser api - Pure Charity Developer Documenation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Fundraiser api";
+    var mkdocs_page_input_path = "api/fundraiser_api.md";
+    var mkdocs_page_url = "/api/fundraiser_api/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Pure Charity Developer Documenation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../changelog/">Changelog</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Api</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Fundraiser api</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#fundraiser-api">Fundraiser API</a></li>
+                
+                    <li><a class="toctree-l4" href="#get-external_fundraisers">GET external_fundraisers/</a></li>
+                
+                    <li><a class="toctree-l4" href="#get-external_fundraisersid">GET external_fundraisers/:id</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/">Overview</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Import guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../import_guide/importing_fundraisers/">Importing fundraisers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../import_guide/overview/">Overview</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Pure Charity Developer Documenation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Api &raquo;</li>
+        
+      
+    
+    <li>Fundraiser api</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="fundraiser-api">Fundraiser API</h4>
+<h6 id="get-external_fundraisers">GET external_fundraisers/</h6>
+<p>Returns a collection of fundraisers along with the current page and the total number pages.</p>
+<p><strong>Optional Parameters</strong></p>
+<ul>
+<li>campaign_id: Returns only the fundraisers where the campaign_id matches with this parameter</li>
+<li>dir: The sort order (default: “desc”)</li>
+<li>sort: The sortable field (date, name, last_name, founder)</li>
+<li>page: The page number (default: 1)</li>
+<li>limit: The number of entries per page (default: 100)</li>
+</ul>
+<p>Example Result:</p>
+<pre><code>{
+  &quot;external_fundraisers&quot;: [
+    {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;Kitties Unite!&quot;,
+      &quot;slug&quot;: &quot;kitties-unite&quot;,
+      &quot;about&quot;: &quot;We want to organize a gathering of cats for everyone to get to enjoy their cuteness.&quot;,
+      &quot;region&quot;: null,
+      &quot;country&quot;: &quot;United States&quot;,
+      &quot;field_partner_id&quot;: 1,
+      &quot;start_date&quot;: &quot;2015-03-27T03:00:00Z&quot;,
+      &quot;end_date&quot;: &quot;2016-03-27T03:00:00Z&quot;,
+      &quot;images&quot;: {
+        &quot;large&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/46/image.jpeg&quot;,
+        &quot;medium&quot;: null,
+        &quot;small&quot;: &quot;http://purecharity.com/uploads/avatar/image/45/image.jpg&quot;
+      },
+      &quot;public_url&quot;: &quot;http://purecharity.com/kitties-unite&quot;,
+      &quot;funding_goal&quot;: 50000,
+      &quot;funding_needed&quot;: 49927,
+      &quot;recurring_funding_goal&quot;: 2000,
+      &quot;owner&quot;: {
+        &quot;name&quot;: &quot;John Cleese&quot;,
+        &quot;slug&quot;: &quot;johncleese&quot;,
+        &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/4/image.png&quot;,
+        &quot;profile&quot;: {
+          &quot;cover_photo&quot;: {
+            &quot;url&quot;: &quot;/images/avatar_defaults/image.png&quot;,
+            &quot;cover&quot;: {
+              &quot;url&quot;: &quot;/images/avatar_defaults/image.png&quot;
+            },
+            &quot;photo&quot;: {
+              &quot;url&quot;: &quot;/images/avatar_defaults/image.png&quot;
+            },
+            &quot;widget&quot;: {
+              &quot;url&quot;: &quot;/images/avatar_defaults/image.png&quot;
+            },
+            &quot;small&quot;: {
+              &quot;url&quot;: &quot;/images/avatar_defaults/image.png&quot;
+            }
+          }
+        }
+      },
+      &quot;category&quot;: {
+        &quot;name&quot;: &quot;Food&quot;,
+        &quot;description&quot;: &quot;Eradicate extreme hunger and improve basic nutrition.&quot;
+      }
+    },
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;Teens United To Change the World&quot;,
+      &quot;slug&quot;: &quot;teens-united-to-change-the-world&quot;,
+      &quot;about&quot;: &quot;Join the movement of teens who are taking a stand to change the world!&quot;,
+      &quot;region&quot;: null,
+      &quot;country&quot;: &quot;United States&quot;,
+      &quot;field_partner_id&quot;: 1,
+      &quot;start_date&quot;: &quot;2015-03-27T03:00:00Z&quot;,
+      &quot;end_date&quot;: &quot;2016-03-27T03:00:00Z&quot;,
+      &quot;images&quot;: {
+        &quot;large&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/44/image.jpg&quot;,
+        &quot;medium&quot;: null,
+        &quot;small&quot;: &quot;http://purecharity.com/uploads/avatar/image/43/image.jpg&quot;
+      },
+      &quot;public_url&quot;: &quot;http://purecharity.com/teens-united-to-change-the-world&quot;,
+      &quot;funding_goal&quot;: 500000,
+      &quot;funding_needed&quot;: 306398,
+      &quot;recurring_funding_goal&quot;: null,
+      &quot;owner&quot;: {
+        &quot;name&quot;: &quot;Charity&quot;,
+        &quot;slug&quot;: &quot;charity&quot;,
+        &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/18/image.jpg&quot;,
+        &quot;profile&quot;: {
+          &quot;cover_photo&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/image.jpg&quot;,
+            &quot;cover&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/cover_image.jpg&quot;
+            },
+            &quot;photo&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/photo_image.jpg&quot;
+            },
+            &quot;widget&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/widget_image.jpg&quot;
+            },
+            &quot;small&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/small_image.jpg&quot;
+            }
+          }
+        }
+      },
+      &quot;category&quot;: {
+        &quot;name&quot;: &quot;Opportunity&quot;,
+        &quot;description&quot;: &quot;Education, homeless services, job creation, orphan care, and other efforts to end extreme poverty.&quot;
+      }
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;current_page&quot;: 1,
+    &quot;num_pages&quot;: 9
+  }
+}
+</code></pre>
+
+<h6 id="get-external_fundraisersid">GET external_fundraisers/:id</h6>
+<p>Returns an individual fundraiser's settings and content.</p>
+<p>Example result:</p>
+<pre><code>{
+  &quot;fundraiser&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Teens United To Change the World&quot;,
+    &quot;slug&quot;: &quot;teens-united-to-change-the-world&quot;,
+    &quot;about&quot;: &quot;Join the movement of teens who are taking a stand to change the world.  We're giving our voice and money to end modern day slavery for the 27 million people in bondage, feeding our brothers and sisters in need and delivering hope to the world. It's time to rise up, be counted and join the movement to eliminate these injustices in our generation!&quot;,
+    &quot;region&quot;: null,
+    &quot;country&quot;: &quot;United States&quot;,
+    &quot;field_partner_id&quot;: 1,
+    &quot;funding_goal&quot;: 500000,
+    &quot;funding_needed&quot;: 306398,
+    &quot;recurring_funding_goal&quot;: null,
+    &quot;start_date&quot;: &quot;2015-03-27T03:00:00Z&quot;,
+    &quot;end_date&quot;: &quot;2016-03-27T03:00:00Z&quot;,
+    &quot;images&quot;: {
+      &quot;large&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/44/orphan4.jpg&quot;,
+      &quot;medium&quot;: null,
+      &quot;small&quot;: &quot;http://purecharity.com/uploads/avatar/image/43/DSC_8408_20avatar.jpg&quot;
+    },
+    &quot;fundraiser_type&quot;: &quot;birthday&quot;,
+    &quot;updates&quot;: [
+      {
+        &quot;title&quot;: &quot;Sample update number 6 for Teens United To Change the World &quot;,
+        &quot;body&quot;: &quot;Lorem ipsum dolor sit amet,\nAenean massa. Cum sociis natoque penatibus et magnis\ndis parturient montes, nascetur ridiculus mus. &quot;,
+        &quot;author&quot;: {
+          &quot;name&quot;: &quot;James Bond&quot;,
+          &quot;slug&quot;: &quot;james-bond&quot;,
+          &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/1/image.jpg&quot;,
+          &quot;profile&quot;: {
+            &quot;cover_photo&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;,
+              &quot;cover&quot;: {
+                &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+              },
+              &quot;photo&quot;: {
+                &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+              },
+              &quot;widget&quot;: {
+                &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+              },
+              &quot;small&quot;: {
+                &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+              }
+            }
+          }
+        },
+        &quot;url&quot;: &quot;http://purecharity.com/teens-united-to-change-the-world/updates/8&quot;
+      }
+    ],
+    &quot;embed_code&quot;: &quot;&quot;,
+    &quot;owner&quot;: {
+      &quot;name&quot;: &quot;Charity&quot;,
+      &quot;slug&quot;: &quot;charity&quot;,
+      &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/18/image.jpg&quot;,
+      &quot;profile&quot;: {
+        &quot;cover_photo&quot;: {
+          &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/image.jpg&quot;,
+          &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/cover_image.jpg&quot;
+          },
+          &quot;photo&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/photo_image.jpg&quot;
+          },
+          &quot;widget&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/widget_image.jpg&quot;
+          },
+          &quot;small&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/19/small_image.jpg&quot;
+          }
+        }
+      }
+    },
+    &quot;category&quot;: {
+      &quot;name&quot;: &quot;Opportunity&quot;,
+      &quot;description&quot;: &quot;Education, homeless services, job creation, orphan care, and other efforts to end extreme poverty.&quot;
+    },
+    &quot;field_partner&quot;: {
+      &quot;name&quot;: &quot;Teen Mania Ministries&quot;,
+      &quot;slug&quot;: &quot;teen-mania&quot;,
+      &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/17/image.png&quot;,
+      &quot;profile&quot;: {
+        &quot;cover_photo&quot;: {
+          &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/18/image.JPG&quot;,
+          &quot;cover&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/18/cover_image.JPG&quot;
+          },
+          &quot;photo&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/18/photo_image.JPG&quot;
+          },
+          &quot;widget&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/18/widget_image.JPG&quot;
+          },
+          &quot;small&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/uploads/profile/cover_photo/18/small_image.JPG&quot;
+          }
+        }
+      }
+    },
+    &quot;backers&quot;: [
+      {
+        &quot;name&quot;: &quot;James Bond&quot;,
+        &quot;slug&quot;: &quot;james-bond&quot;,
+        &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/1/image.jpg&quot;,
+        &quot;profile&quot;: {
+          &quot;cover_photo&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;,
+            &quot;cover&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;photo&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;widget&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;small&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            }
+          }
+        }
+      },
+      {
+        &quot;name&quot;: &quot;John Smith&quot;,
+        &quot;slug&quot;: &quot;johnsmith&quot;,
+        &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/6/image.png&quot;,
+        &quot;profile&quot;: {
+          &quot;cover_photo&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;,
+            &quot;cover&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;photo&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;widget&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;small&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            }
+          }
+        }
+      },
+      {
+        &quot;name&quot;: &quot;Peter Giver&quot;,
+        &quot;slug&quot;: &quot;petergiver&quot;,
+        &quot;avatar&quot;: &quot;http://purecharity.com/uploads/avatar/image/5/image.jpeg&quot;,
+        &quot;profile&quot;: {
+          &quot;cover_photo&quot;: {
+            &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;,
+            &quot;cover&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;photo&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;widget&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            },
+            &quot;small&quot;: {
+              &quot;url&quot;: &quot;http://purecharity.com/images/avatar_defaults/image.png&quot;
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../changelog/" class="btn btn-neutral" title="Changelog"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../changelog/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
