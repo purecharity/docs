@@ -1,2 +1,2 @@
 # docs
-Pure Charity Technical Documentation
+Pure Charity Developer Documentation
